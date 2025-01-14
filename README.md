@@ -1,57 +1,79 @@
 # 🧵 Fórum Hub API
 
-Este projeto é uma **API RESTful** para o gerenciamento de tópicos e discussões, desenvolvida como parte do challenge promovido pela **Alura** em parceria com o programa **Oracle Next Education**.
+Este projeto é uma **API RESTful** desenvolvida para o gerenciamento de tópicos e discussões. Ele foi criado como parte do desafio promovido pela **Alura**, em parceria com o programa **Oracle Next Education**.
 
 ---
 
 ## 🚀 Tecnologias Utilizadas
 
 - **Linguagem:** Java 17
-- **Framework:** Spring Boot (versão 3.3.5)
-- **Banco de Dados:** MySQL, com gerenciamento de migrações via Flyway
+- **Framework:** Spring Boot (v3.3.5)
+- **Banco de Dados:** MySQL, com migrações gerenciadas via Flyway
 - **Gerenciamento de Dependências:** Maven
 - **Validação e Segurança:** Spring Validation e Spring Security
-- **Autenticação:** Implementada com JWT (Java Web Token)
-- **Documentação:** Gerada automaticamente usando Springdoc OpenAPI
+- **Autenticação:** JWT (Java Web Token)
+- **Documentação:** Gerada automaticamente com Springdoc OpenAPI
 
 ---
 
-## 📦 Dependências
+## 📦 Principais Dependências
 
-A configuração completa está disponível no arquivo **`pom.xml`**, mas aqui estão as principais dependências utilizadas:
+A configuração completa está disponível no arquivo **`pom.xml`**, mas as principais dependências incluem:
 
-- **Spring Boot Starter Web:** Para desenvolvimento de APIs REST.
-- **Spring Boot Starter Data JPA:** Para manipulação de dados no banco de dados.
-- **Spring Boot Starter Validation:** Para validações dos dados.
-- **Spring Boot Starter Security:** Para configuração de autenticação e autorização.
-- **Flyway:** Para migração e versionamento de banco de dados.
-- **Lombok:** Para redução de código boilerplate.
-- **Springdoc OpenAPI:** Para geração de documentação interativa da API.
-- **MySQL Connector:** Para conexão com o banco de dados.
+- **Spring Boot Starter Web:** Desenvolvimento de APIs REST.
+- **Spring Boot Starter Data JPA:** Manipulação de dados no banco de dados.
+- **Spring Boot Starter Validation:** Validação de dados de entrada.
+- **Spring Boot Starter Security:** Configuração de autenticação e autorização.
+- **Flyway:** Migração e versionamento do banco de dados.
+- **Lombok:** Redução de código boilerplate.
+- **Springdoc OpenAPI:** Geração de documentação interativa.
+- **MySQL Connector:** Conexão com o banco de dados MySQL.
 
 ---
 
 ## ✨ Funcionalidades
 
 ### 🔹 Cadastro de Tópicos
-Permite registrar novos tópicos, validando a unicidade de título e mensagem.
+- Criação de novos tópicos, com validação de título e mensagem.
 
 ### 🔹 Listagem de Tópicos
-Lista tópicos registrados no sistema, com suporte a paginação e ordenação.
+- Visualização dos tópicos registrados, com suporte a paginação e ordenação.
 
 ### 🔹 Detalhamento de Tópico
-Permite visualizar informações detalhadas de um tópico por meio de seu ID.
+- Exibição detalhada de informações de um tópico pelo ID.
 
 ### 🔹 Atualização e Exclusão
 - Atualização de informações existentes.
-- Exclusão lógica de tópicos, marcando-os como inativos.
+- Exclusão lógica, marcando os tópicos como inativos.
 
 ### 🔹 Autenticação JWT
-Garantia de que apenas usuários autenticados possam acessar os endpoints protegidos.
+- Acesso seguro, garantindo que apenas usuários autenticados possam acessar endpoints protegidos.
 
 ---
 
-## 🛠️ Sugestão de Testes com Insomnia
-Recomenda-se o uso do **Insomnia** para realizar os testes dos endpoints da API, configurando as variáveis de ambiente para facilitar as requisições e utilizando o token JWT para autenticação nos endpoints protegidos.
+## 🛠️ Testes com Insomnia
+
+É recomendado o uso do **Insomnia** para testar os endpoints da API. Configure variáveis de ambiente para simplificar as requisições e inclua o token JWT para autenticar os endpoints protegidos.
 
 ---
+
+### 🗂️ Estrutura do Projeto
+
+Organização das pastas no projeto para fácil navegação e manutenção:
+
+```plaintext
+src/
+├── main/
+│   ├── java/
+│   │   ├── com.example.forumhub/
+│   │   │   ├── controllers/
+│   │   │   ├── services/
+│   │   │   ├── repositories/
+│   │   │   ├── models/
+│   │   │   └── configs/
+│   └── resources/
+│       ├── application.properties
+│       └── db/
+│           └── migration/
+└── test/
+    └── java/
